@@ -1,3 +1,7 @@
+My completed projects for Wes Bos' JavaScript30 Course.
+- Each file that says "STARTER" is my completed program.
+- Each file that says "FINISHED" is the solution (never used until I complete project, only to check differences in code).
+
 ![](https://javascript30.com/images/JS3-social-share.png)
 
 # JavaScript30
