@@ -34,12 +34,14 @@
       <input id="base" type="color" name="base" value="#ffc600" />
     </div>
 
-    <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
+    <img src="Images/image.png" />
 
     <style>
-      /*
-      misc styles, nothing to do with CSS variables
-    */
+      :root {
+        --base-color: #ffc600;
+        --spacing: 10;
+        --blur: 10;
+      }
 
       body {
         text-align: center;
@@ -57,12 +59,37 @@
       input {
         width: 100px;
       }
+
+      img {
+        background-color: var(--base-color);
+        padding: calc(var(--spacing) * 1px);
+        filter: blur(calc(var(--blur) * 1px));
+      }
+
+      .hl {
+        color: var(--base-color);
+      }
     </style>
 
     <script>
       const spacingInput = document.getElementById('spacing');
       const blurInput = document.getElementById('blur');
       const baseInput = document.getElementById('base');
+      const img = document.querySelector('img');
+      const hl = document.querySelector('.hl');
+
+      spacingInput.addEventListener('mousemove', function() {
+        img.style.setProperty('--spacing', this.value);
+      });
+
+      blurInput.addEventListener('mousemove', function() {
+        img.style.setProperty('--blur', this.value);
+      });
+
+      baseInput.addEventListener('change', function() {
+        img.style.setProperty('--base-color', this.value);
+        hl.style.setProperty('--base-color', this.value);
+      });
 
       console.log(baseInput.value);
     </script>
