@@ -112,6 +112,41 @@
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+      let cities = [
+        'Boulevards of Paris',
+        'City walls of Paris',
+        'Thiers wall',
+        'Wall of Charles V',
+        'Wall of Philip II Augustus',
+        'City gates of Paris',
+        "Haussmann's renovation of Paris",
+        'Boulevards of the Marshals',
+        'Boulevard Auguste-Blanqui',
+        'Boulevard Barbès',
+        'Boulevard Beaumarchais',
+        "Boulevard de l'Amiral-Bruix",
+        'Boulevard des Capucines',
+        'Boulevard de la Chapelle',
+        'Boulevard de Clichy',
+        'Boulevard du Crime',
+        "Boulevard du Général-d'Armée-Jean-Simon",
+        "Boulevard de l'Hôpital",
+        'Boulevard des Italiens',
+        'Boulevard de la Madeleine',
+        'Boulevard de Magenta',
+        'Boulevard du Montparnasse',
+        'Boulevard Richard-Lenoir',
+        'Boulevard de Rochechouart',
+        'Boulevard de Strasbourg',
+        'Boulevard du Temple',
+        'Boulevard de la Zone'
+      ];
+
+      let splitCities = cities.filter(city => {
+        return city.includes(' de ') ? true : false;
+      });
+
+      console.log(splitCities);
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
@@ -142,6 +177,17 @@
         'car',
         'truck'
       ];
+
+      let answerEight = data.reduce((count, name) => {
+        if (name in count) {
+          count[name]++;
+        } else {
+          count[name] = 1;
+        }
+        return count;
+      }, {}); // IMPORTANCE OF INITIAL VALUE AS A EMPTY OBJECT!
+
+      console.log(answerEight);
     </script>
   </body>
 </html>
