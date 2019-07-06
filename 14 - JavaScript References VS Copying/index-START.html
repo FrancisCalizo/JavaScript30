@@ -82,9 +82,30 @@
       });
       console.log(person, captainTwo);
 
-      // We will hopefully soon see the object ...spread
+      // and Now we have..object ...spread
+      const captainThree = { ...person };
+      captainThree.ship = 'The Black Pearl';
+
+      console.log(captainThree, person);
 
       // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+      const francis = {
+        name: 'Francis',
+        age: 30,
+        social: {
+          twitter: '@francisc',
+          facebook: 'francydevs'
+        }
+      };
+
+      console.log(francis);
+
+      // Doesn't work because it is one level deep
+      const dev = Object.assign({}, francis);
+      console.log(francis, dev);
+
+      // This works but is considered the "poor mans deep clone"
+      const dev2 = JSON.parse(JSON.stringify(francis));
     </script>
   </body>
 </html>
